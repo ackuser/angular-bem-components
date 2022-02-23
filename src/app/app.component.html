@@ -1,0 +1,36 @@
+<h2>Playground</h2>
+
+<label for="color">
+  Color: 
+  <select #color id="color" (input)="null">
+    <option value="primary">Primary</option>
+    <option value="success">Success</option>
+    <option value="danger">Danger</option>
+  </select>
+</label>
+<br>
+<label for="disabled">
+  Disabled:
+  <input #disabled id="disabled" type="checkbox" (input)="null" />
+</label>
+<br>
+<label for="outline">
+  Outline:
+  <input #outline id="outline" type="checkbox" (input)="null" />
+</label>
+
+<app-button
+  [color]="color.options[color.selectedIndex].value"
+  [disabled]="disabled.checked"
+  [outline]="outline.checked"
+>Click</app-button>
+
+<hr>
+
+<h2>Example: primary + outline</h2>
+<app-button color="primary" [outline]="true">Request a demo</app-button>
+
+<hr>
+
+<h2>Example: success + disabled</h2>
+<app-button color="success" [disabled]="true">Save</app-button>
